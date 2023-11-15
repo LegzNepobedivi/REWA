@@ -1,0 +1,116 @@
+/* Color of the links BEFORE scroll */
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler-icon,
+.navbar-scroll .navbar-brand {
+  color: #fff;
+}
+
+/* Color of the links AFTER scroll */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon,
+.navbar-scrolled .navbar-brand {
+  color: #fff;
+}
+
+/* Color of the navbar AFTER scroll */
+.navbar-scroll,
+.navbar-scrolled {
+  background-color: #cbbcb1;
+}
+
+.mask-custom {
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-brand {
+  font-size: 1.75rem;
+  letter-spacing: 3px;
+}
+
+/*Search bar*/
+
+.inputs {
+  position: relative;
+}
+
+.form-control {
+  text-indent: 15px;
+  border: none;
+  height: 45px;
+  border-radius: 0px;
+  border-bottom: 1px solid #eee;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #eee;
+  outline: 0;
+  box-shadow: none;
+  border-bottom: 1px solid blue;
+}
+
+.form-control:focus {
+  color: blue;
+}
+
+.inputs i {
+  position: absolute;
+  top: 14px;
+  left: 4px;
+  color: #b8b9bc;
+}
+
+/*Moje izmene*/
+.dugme {
+  transition-duration: 0.4s;
+  background-color: whitesmoke;
+  color: #160e3f;
+  border: 1px solid #160e3f;
+}
+
+.dugme:hover {
+  background-color: #160e3f;
+  color: whitesmoke;
+}
+
+.dugmeCrveno {
+  transition-duration: 0.4s;
+  background-color: red;
+  color: whitesmoke;
+  border: 1px solid #160e3f;
+}
+
+.dugmeCrveno:hover {
+  background-color: whitesmoke;
+  color: red;
+}
+
+.dugmeDrugo {
+  transition-duration: 0.4s;
+  background-color: #160e3f;
+  color: whitesmoke;
+  border: 1px solid #160e3f;
+}
+
+.dugmeDrugo:hover {
+  background-color: whitesmoke;
+  color: #160e3f;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.spreci {
+  padding-top: 70px;
+  margin-top: 70px;
+}
+
+.slika {
+  width: 100%;
+  height: 480px;
+}
