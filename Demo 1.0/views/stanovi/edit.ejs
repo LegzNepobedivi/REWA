@@ -1,0 +1,341 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+  <h1 class="text-center">Izmeni Nekretninu</h1>
+  <div class="col-6 offset-3">
+    <form
+      action="/stanovi/<%= stan._id %>?_method=PUT"
+      method="post"
+      novalidate
+      class="validated-form"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label class="form-label" for="sale">Prodaja/Izdavanje</label>
+        <select
+          class="form-select"
+          id="sale"
+          name="stan[sale]"
+          aria-label="Default select example"
+          required
+        >
+          <option value="<%= stan.sale %>" selected><%= stan.sale %></option>
+          <option value="Prodaja">Prodaja</option>
+          <option value="Izdavanje">Izdavanje</option>
+        </select>
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="title">Naziv/Naslov</label>
+        <input
+          class="form-control"
+          type="text"
+          id="title"
+          name="stan[title]"
+          value="<%= stan.title %>"
+          required
+        />
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="location">Lokacija</label>
+        <input
+          class="form-control"
+          type="text"
+          id="location"
+          name="stan[location]"
+          value="<%= stan.location %>"
+          required
+        />
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="price">Cena</label>
+        <div class="input-group">
+          <span class="input-group-text" id="price">EUR</span>
+          <input
+            type="text"
+            class="form-control"
+            id="price"
+            name="stan[price]"
+            value="<%= stan.price %>"
+            placeholder="0.00"
+            aria-label="price"
+            aria-describedby="price-label"
+            required
+          />
+        </div>
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="structure">Broj soba/Struktura</label>
+        <input
+          class="form-control"
+          type="text"
+          id="structure"
+          name="stan[structure]"
+          value="<%= stan.structure %>"
+          placeholder="0.0"
+          required
+        />
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="areaSize">Kvadratura</label>
+        <input
+          class="form-control"
+          type="text"
+          id="areaSize"
+          name="stan[areaSize]"
+          value="<%= stan.areaSize %>"
+          placeholder="dodajte m2 ili ar ili har takodje"
+          required
+        />
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="toilets">Broj kupatila</label>
+        <input
+          class="form-control"
+          type="text"
+          id="toilets"
+          name="stan[toilets]"
+          value="<%= stan.toilets %>"
+          placeholder="0.0"
+        />
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="level">Sprat</label>
+        <input
+          class="form-control"
+          type="text"
+          id="level"
+          name="stan[level]"
+          value="<%= stan.level %>"
+          placeholder="0.0"
+        />
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="etaza">Etaza</label>
+        <input
+          class="form-control"
+          type="text"
+          id="etaza"
+          value="<%= stan.etaza %>"
+          name="stan[etaza]"
+        />
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="agentName">Ime Agenta</label>
+        <input
+          class="form-control"
+          type="text"
+          id="agentName"
+          name="stan[agentName]"
+          value="<%= stan.agentName %>"
+          required
+        />
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="agentLicense">Licenca Agenta</label>
+        <input
+          class="form-control"
+          type="text"
+          id="agentLicense"
+          name="stan[agentLicense]"
+          value="<%= stan.agentLicense %>"
+        />
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="agentNumber">Broj telefona agenta</label>
+        <input
+          class="form-control"
+          type="text"
+          id="agentNumber"
+          name="stan[agentNumber]"
+          value="<%= stan.agentNumber %>"
+          required
+        />
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="agentEmail">Mejl agenta</label>
+        <input
+          class="form-control"
+          type="text"
+          id="agentEmail"
+          name="stan[agentEmail]"
+          value="<%=stan.agentEmail%>"
+        />
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="description">Detaljniji opis</label>
+        <textarea
+          class="form-control"
+          type="text"
+          id="description"
+          name="stan[description]"
+          required
+        >
+<%= stan.description %></textarea
+        >
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <!--YouTube link-->
+      <!--Menjaj-->
+      <div class="mb-3">
+        <label class="form-label" for="videoLink"
+          >Dodaj link video snimka</label
+        >
+        <input
+          class="form-control"
+          type="text"
+          id="videoLink"
+          name="stan[videoLink]"
+          value="<%= stan.videoLink %>"
+          placeholder="ako nema linka stavite / -> ne ostavljaj prazno"
+        />
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="types">Sta sve ima</label>
+
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="Provizija"
+          />
+          <label class="form-check-label" for="Provizija">
+            Sa provizijom
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="NeProvizija"
+          />
+          <label class="form-check-label" for="NeProvizija">
+            Bez provizije
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Kuca" />
+          <label class="form-check-label" for="Kuca"> Kuca </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Flat" />
+          <label class="form-check-label" for="Flat"> Stan </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="Lift" />
+          <label class="form-check-label" for="Lift"> Lift </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="Terasa"
+          />
+          <label class="form-check-label" for="Terasa"> Terasa </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="Novogradnja"
+          />
+          <label class="form-check-label" for="Novogradnja">
+            Novogradnja
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="Starogradnja"
+          />
+          <label class="form-check-label" for="Starogradnja">
+            Stara gradnja
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="Zemljiste"
+          />
+          <label class="form-check-label" for="Zemljiste"> Zemljiste </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="PoslProstor"
+          />
+          <label class="form-check-label" for="PoslProstor">
+            Poslovni prostor
+          </label>
+        </div>
+      </div>
+
+      <!--SLIKE-->
+      <div class="mb-3 custom-file">
+        <label for="image" class="form-label">Upload images</label>
+        <input
+          class="form-control"
+          type="file"
+          id="image"
+          name="image"
+          multiple
+        />
+      </div>
+      <div class="mb-3">
+        <% stan.images.forEach(function(img,i) {%>
+        <img src="<%= img.thumbnail %>" class="img-thumbnail" alt="" />
+        <div class="form-check-inline">
+          <input
+            type="checkbox"
+            id="image-<%= i %>"
+            name="deleteImages[]"
+            value="<%=img.filename%>"
+          />
+        </div>
+        <label for="image-<%=i%>">Izbrisi?</label>
+        <%}); %>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-info">Azuriraj Nekretninu</button>
+      </div>
+    </form>
+    <a href="/stanovi/<%= stan._id %>">Nazad Na Nekretninu</a>
+  </div>
+</div>
