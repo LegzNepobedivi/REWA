@@ -25,8 +25,8 @@ module.exports.createAgent = async (req, res, next) => {
 };
 
 module.exports.deleteAgent = async (req, res) => {
-  const { id } = req.params;
-  await Agent.findByIdAndDelete(id);
+  const { agentId } = req.params;
+  await Agent.findByIdAndDelete(agentId);
   req.flash("success", "Agent deleted successfully");
   res.redirect(`/agenti`);
 };

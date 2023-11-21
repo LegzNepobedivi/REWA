@@ -50,7 +50,7 @@ module.exports.stanSchema = Joi.object({
 module.exports.agentSchema = Joi.object({
   agent: Joi.object({
     name: Joi.string().required().escapeHTML(),
-    mobile: Joi.number().required(),
+    mobile: Joi.string().required(),
     mail: Joi.string().required().escapeHTML(),
     license: Joi.string().required().escapeHTML(),
   }).required(),

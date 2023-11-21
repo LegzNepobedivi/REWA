@@ -6,7 +6,7 @@ const opts = { toJSON: { virtuals: true } };
 const AgentSchema = new Schema(
   {
     name: String,
-    mobile: Number,
+    mobile: String,
     mail: String,
     license: String,
     author: {

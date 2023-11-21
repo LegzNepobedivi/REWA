@@ -4,7 +4,12 @@ const router = express.Router({ mergeParams: true });
 const catchAsync = require("../utils/catchAsync.js");
 const ExpressError = require("../utils/ExpressError.js");
 
-const { validateAgent, isLoggedIn } = require("../middleware.js");
+const {
+  validateAgent,
+  isLoggedIn,
+  isAuthor,
+  isAgentAuthor,
+} = require("../middleware.js");
 const { agentSchema } = require("../schemas.js");
 
 const agenti = require("../controllers/agenti");
@@ -19,6 +24,20 @@ router
   .post(isLoggedIn, validateAgent, catchAsync(agenti.createAgent));
 
 router.get("/new", isLoggedIn, agenti.renderNewForm);
+
+router
+  .route("/:agentId")
+  .get(catchAsync(agenti.index))
+  .delete(isLoggedIn, isAgentAuthor, catchAsync(agenti.deleteAgent));
+
+// router
+//   .route("/")
+//   .delete(
+//     "/:agentId",
+//     isLoggedIn,
+//     isAgentAuthor,
+//     catchAsync(agenti.deleteAgent)
+//   );
 
 // router.post("/", isLoggedIn, validateAgent, catchAsync(agent.createAgent));
 

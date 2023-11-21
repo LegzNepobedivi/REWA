@@ -44,6 +44,7 @@ module.exports.isAuthor = async (req, res, next) => {
 module.exports.isAgentAuthor = async (req, res, next) => {
   const { agentId } = req.params;
   const agent = await Agent.findById(agentId);
+
   if (!agent.author.equals(req.user._id)) {
     req.flash("error", "Not your stan");
     return res.redirect(`/agenti`);
