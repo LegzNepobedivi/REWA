@@ -40,7 +40,7 @@ module.exports.stanSchema = Joi.object({
     language: Joi.string().escapeHTML(),
     agentName: Joi.string().required().escapeHTML(),
     agentLicense: Joi.string().escapeHTML(),
-    agentNumber: Joi.number().required(),
+    agentNumber: Joi.string().required(),
     agentEmail: Joi.string().escapeHTML(),
     videoLink: Joi.string(),
   }).required(),

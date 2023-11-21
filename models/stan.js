@@ -45,7 +45,7 @@ const StanSchema = new Schema(
     },
     agentName: String,
     agentLicense: String,
-    agentNumber: Number,
+    agentNumber: String,
     agentEmail: String,
 
     videoLink: String,
