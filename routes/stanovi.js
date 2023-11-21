@@ -27,6 +27,17 @@ router
     catchAsync(stanovi.createStan)
   );
 
+router
+  .route("/mapa")
+  .get(catchAsync(stanovi.mapa))
+
+  .post(
+    isLoggedIn,
+    upload.array("image"),
+    validateStan,
+    catchAsync(stanovi.createStan)
+  );
+
 router.get("/new", isLoggedIn, stanovi.renderNewForm);
 
 router

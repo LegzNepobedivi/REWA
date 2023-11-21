@@ -49,10 +49,13 @@
         class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0"
       >
         <div class="container">
-          <a class="navbar-brand" href="#!"
-            ><span style="color: #5e9693">Bedem</span
-            ><span style="color: #fff">Nekretnine</span></a
-          >
+          <a class="navbar-brand" href="/"
+            ><img
+              style="height: 50px; width: 100%; color: #030223"
+              src="/img/logo1.svg"
+              alt=""
+            />
+          </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -67,16 +70,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto align-items-end">
               <li class="nav-item">
-                <a class="nav-link" href="./home">Početna</a>
+                <a class="nav-link" href="/">Početna</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/stanovi">Nekretnine</a>
+                <a class="nav-link" href="./stanovi">Nekretnine</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./agenti">Agenti</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./home">Mapa</a>
+                <a class="nav-link" href="./stanovi/mapa">Mapa</a>
               </li>
             </ul>
             <ul class="navbar-nav d-flex flex-row">
@@ -123,18 +126,18 @@
     <%- //include('partials/search.ejs') %>
 
     <footer
-      class="text-center text-lg-start text-white"
+      class="text-center text-lg-start text-white ivanFont3"
       style="background-color: #929fba"
     >
       <!-- Grid container -->
-      <div class="container p-4 pb-0">
+      <div class="container mb-3">
         <!-- Section: Links -->
         <section class="">
           <!--Grid row-->
           <div class="row">
             <!-- Grid column -->
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-              <h6 class="text-uppercase mb-4 font-weight-bold">O nama</h6>
+              <h6 class="mb-4 font-weight-bold fs-4 ivanFont">O nama</h6>
               <p>
                 Tim entuzijasta, koji su spremni da svoje dugogodisnje znanje iz
                 direktne prodaje I , od skora, investitorskih voda, upotrebe u
@@ -148,8 +151,8 @@
 
             <!-- Grid column -->
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-              <h6 class="text-uppercase mb-4 font-weight-bold">
-                Poslovni podaci
+              <h6 class="mb-4 font-weight-bold fs-4 ivanFont">
+                Poslovna jedinica
               </h6>
               <p>
                 <a class="text-white"
@@ -181,19 +184,17 @@
 
             <!-- Grid column -->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h6 class="text-uppercase mb-4 font-weight-bold">Mapa sajta</h6>
+              <h6 class="mb-4 font-weight-bold fs-4 ivanFont">Mapa sajta</h6>
               <p><a class="text-white" href="/">Početna</a></p>
               <p><a class="text-white" href="/stanovi">Stanovi</a></p>
-              <p><a class="text-white" href="/mapa">Mapa</a></p>
+              <p><a class="text-white" href="/stanovi/mapa">Mapa</a></p>
               <p><a class="text-white" href="/agenti">Agenti</a></p>
             </div>
             <!-- Grid column -->
 
             <!-- Grid column -->
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h6 class="text-uppercase mb-4 font-weight-bold">
-                Zapratite nas
-              </h6>
+              <h6 class="mb-4 font-weight-bold fs-4 ivanFont">Zapratite nas</h6>
 
               <!-- Facebook -->
               <a
@@ -204,15 +205,6 @@
                 ><i class="fab fa-facebook-f"></i
               ></a>
 
-              <!-- Twitter -->
-              <a
-                class="btn btn-primary btn-floating m-1"
-                style="background-color: #55acee"
-                href="#!"
-                role="button"
-                ><i class="fab fa-twitter"></i
-              ></a>
-
               <!-- Instagram -->
               <a
                 class="btn btn-primary btn-floating m-1"
@@ -220,6 +212,15 @@
                 href="#!"
                 role="button"
                 ><i class="fab fa-instagram"></i
+              ></a>
+
+              <!--YouTube-->
+              <a
+                class="btn btn-primary btn-floating m-1"
+                style="background-color: #b2071d"
+                href="#!"
+                role="button"
+                ><i class="fab fa-youtube"></i
               ></a>
             </div>
           </div>

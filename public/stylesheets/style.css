@@ -114,3 +114,32 @@
   width: 100%;
   height: 480px;
 }
+
+.zlatna {
+  color: #c29b40;
+}
+
+.ivanPlava {
+  color: #160e3f;
+}
+
+.maloJaca {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.ivanFont {
+  font-family: "PT Serif", serif;
+  font-weight: 500;
+}
+
+.ivanFont2 {
+  font-family: "DM Serif Display", serif;
+  letter-spacing: 4px;
+}
+
+.ivanFont3 {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  font-weight: 200;
+}

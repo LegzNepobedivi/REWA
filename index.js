@@ -150,9 +150,9 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/pogled", (req, res) => {
-  res.render("pogled");
-});
+// app.get("/mapa", (req, res) => {
+//   res.render("mapa");
+// });
 
 app.all("*", (req, res, next) => {
   next(new ExpressError("Page not found", 404));

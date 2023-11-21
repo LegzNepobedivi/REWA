@@ -9,25 +9,27 @@
 </div>
 
 <div class="mb-3">
-  <h1 class="mb-3"><%= stan.title %></h1>
-  <h4 class="mb-3">ID: <%= stan._id %></h4>
+  <h1 class="mb-3 ivanFont ivanPlava"><%= stan.title %></h1>
+  <h4 class="mb-3 ivanFont ivanPlava">ID: <%= stan._id %></h4>
 
   <div class="row">
     <div class="col-3">
-      <h6 class="text-uppercase">Cena</h6>
-      <p><i class="bi bi-currency-euro"> </i><%= stan.price %></p>
+      <h6 class="text-uppercase zlatna">Cena</h6>
+      <p class="ivanFont ivanPlava maloJaca">
+        <i class="bi bi-currency-euro"> </i><%= stan.price %>
+      </p>
     </div>
     <div class="col-3">
-      <h6 class="text-uppercase">Površina</h6>
-      <p><%= stan.areaSize %></p>
+      <h6 class="text-uppercase zlatna">Površina</h6>
+      <p class="ivanFont ivanPlava maloJaca"><%= stan.areaSize %></p>
     </div>
     <div class="col-3">
-      <h6 class="text-uppercase">Struktura</h6>
-      <p><%= stan.structure %></p>
+      <h6 class="text-uppercase zlatna">Struktura</h6>
+      <p class="ivanFont ivanPlava maloJaca"><%= stan.structure %></p>
     </div>
     <div class="col-3">
-      <h6 class="text-uppercase">Kupatilo</h6>
-      <p><%= stan.toilets %></p>
+      <h6 class="text-uppercase zlatna">Kupatilo</h6>
+      <p class="ivanFont ivanPlava maloJaca"><%= stan.toilets %></p>
     </div>
   </div>
 
@@ -38,7 +40,7 @@
         <div class="p-4 bg-body border rounded-3 row">
           <div class="col-3">
             <img
-              src="/img/betterIcon.png"
+              src="/img/charIcon1.svg"
               alt=""
               width="80px"
               height="80px"
@@ -46,7 +48,7 @@
             />
           </div>
           <div class="col-9">
-            <p class="fs-5">
+            <p class="fs-4 ivanFont ivanPlava">
               Agent: <%= stan.agentName %> <%= stan.agentNumber %>
             </p>
             <div class="btn-group">

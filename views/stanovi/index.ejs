@@ -29,8 +29,8 @@
           <rect width="100%" height="100%" fill="#55595c"></rect>
 
           <div class="card-body">
-            <h5><%= stan.title %></h5>
-            <p class="card-text"><%= stan.description %></p>
+            <h5 class="fs-4 ivanFont"><%= stan.title %></h5>
+            <p class="card-text ivanFont"><%= stan.description %></p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <a
@@ -66,7 +66,58 @@
 </div>
 
 <!--Pagination-->
+<% if (stanovi.length > 0) { %>
+<div class="mb-3 bg-body-tertiary">
+  <nav aria-label="Dashboard Pagination">
+    <ul class="pagination pagination-circle justify-content-center mt-5">
+      <% if (current == 1) { %>
 
-<script>
-  const stanovi = {features: <%-JSON.stringify(stanovi)%>}
-</script>
+      <li class="page-item disabled">
+        <a href="/stanovi" class="page-link">Prva</a>
+      </li>
+
+      <% } else { %>
+
+      <li class="page-item">
+        <a href="/stanovi/?page=1" class="page-link">Prva</a>
+      </li>
+      <% } %> <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %> <%
+      if(i !== 1) { %>
+
+      <li class="page-item disabled">
+        <a href="#" class="page-link">...</a>
+      </li>
+      <% } %> <% for(; i <= (Number(current) + 4) && i <= pages; i++ ) { %> <%
+      if(i == current) { %>
+
+      <li class="page-item disabled">
+        <a href="#" class="page-link"><%= i %></a>
+      </li>
+
+      <% } else { %>
+
+      <li class="page-item">
+        <a href="/stanovi/?page=<%= i %>" class="page-link"><%= i %></a>
+      </li>
+
+      <% } %> <% if (i == Number(current) + 4 && i < pages) { %>
+
+      <li class="page-item disabled">
+        <a href="#" class="page-link">...</a>
+      </li>
+
+      <% } %> <% } %> <% if (current == pages) { %>
+      <li class="page-item disabled">
+        <a href="#" class="page-link">Poslednja</a>
+      </li>
+      <% } else { %>
+
+      <li class="page-item">
+        <a href="/stanovi/?page=<%= pages %>" class="page-link">Poslednja</a>
+      </li>
+
+      <% } %>
+    </ul>
+  </nav>
+</div>
+<% } %>

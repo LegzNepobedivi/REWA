@@ -1,0 +1,15 @@
+<% layout('layouts/boilerplate') %>
+
+<link rel="stylesheet" href="/stylesheets/style.css" type="text/css" />
+
+<div class="mb-4"></div>
+<div class="mb-3">
+  <div id="map" style="width: 100%; height: 500px"></div>
+</div>
+
+<script>
+  const mapToken = "<%-process.env.MAPBOX_TOKEN%>";
+  const stanovi = {features: <%- JSON.stringify(stanovi) %>}
+</script>
+
+<script src="/javascripts/clusterMap.js"></script>

@@ -10,8 +10,25 @@ const Stan = require("../models/stan");
 const { cloudinary } = require("../cloudinary");
 
 module.exports.index = async (req, res) => {
+  let perPage = 12;
+  let page = req.query.page || 1;
+
+  const stanovi = await Stan.aggregate([{ $sort: { createdAt: -1 } }])
+    .skip(perPage * page - perPage)
+    .limit(perPage)
+    .exec();
+  const count = await Stan.count();
+
+  res.render("stanovi/index", {
+    stanovi,
+    current: page,
+    pages: Math.ceil(count / perPage),
+  });
+};
+
+module.exports.mapa = async (req, res) => {
   const stanovi = await Stan.find({});
-  res.render("stanovi/index", { stanovi });
+  res.render("mapa", { stanovi });
 };
 
 module.exports.renderNewForm = (req, res) => {

@@ -4,13 +4,17 @@
 
 <% if(currentUser) {%>
 <div class="mt-4">
-  <a href="/stanovi/new" class="btn btn-outline-primary">Dodaj nekretninu</a>
+  <a href="/stanovi/new" class="btn btn-outline-primary dugme"
+    >Dodaj nekretninu</a
+  >
 </div>
 <% }%>
 
 <form class="mt-4">
   <div class="container">
-    <div class="mt-3"><h3>Pronađite svoj dom</h3></div>
+    <div class="mt-3 ivanFont">
+      <h3 class="fs-2 ivanPlava">Pronađite svoj dom</h3>
+    </div>
     <div class="mt-3 inputs">
       <input
         type="text"
@@ -20,6 +24,7 @@
       />
       <i class="fa fa-search"></i>
     </div>
+
     <div class="container text-center my-3">
       <div class="row">
         <div class="col-md-12">
@@ -47,6 +52,91 @@
           <button type="button" class="btn btn-outline-primary m-1 dugme">
             Filteri
           </button>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="container text-center my-3"></div>
+
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-md-7 col-lg-8">
+          <form class="needs-validation" novalidate="">
+            <div class="row g-3">
+              <div class="col-md-5">
+                <select class="form-select" id="country" required="">
+                  <option value="" selected>Sa provizijom</option>
+                  <option>Bez provizije</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <select class="form-select" id="state" required="">
+                  <option value="">Tip nekretnine...</option>
+                  <option>Stan</option>
+                  <option>Kuća</option>
+                  <option>Zemljište</option>
+                  <option value="">Poslovni prostor</option>
+                </select>
+              </div>
+
+              <div class="col-md-3">
+                <select class="form-select" id="nrbitno" required="">
+                  <option value="" selected>Kupujem/Zakupljujem...</option>
+                  <option>Kupujem</option>
+                  <option>Zakupljujem</option>
+                </select>
+              </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="same-address"
+              />
+              <label class="form-check-label" for="same-address">Terasa</label>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="save-info" />
+              <label class="form-check-label" for="save-info">Lift</label>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="novo" />
+              <label class="form-check-label" for="save-info"
+                >Novogradnja</label
+              >
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="staro" />
+              <label class="form-check-label" for="save-info"
+                >Starogradnja</label
+              >
+            </div>
+
+            <hr class="my-4" />
+
+            <button
+              class="w-100 btn btn-primary btn-lg dugmeDrugo"
+              type="submit"
+            >
+              Pretraži
+            </button>
+          </form>
+        </div>
+        <div class="col-md-5 col-lg-4">
+          <form action="">
+            <div class="row g-5">
+              <!--SORTIRANJE-->
+            </div>
+          </form>
         </div>
       </div>
     </div>
