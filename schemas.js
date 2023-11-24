@@ -24,7 +24,7 @@ const extension = (joi) => ({
 
 const Joi = BaseJoi.extend(extension);
 
-//JEBENI VIDEO LINK
+//hmmm
 module.exports.stanSchema = Joi.object({
   stan: Joi.object({
     title: Joi.string().required().escapeHTML(),
@@ -43,6 +43,16 @@ module.exports.stanSchema = Joi.object({
     agentNumber: Joi.string().required(),
     agentEmail: Joi.string().escapeHTML(),
     videoLink: Joi.string(),
+    daProvizija: Joi.boolean(),
+    neProvizija: Joi.boolean(),
+    kuca: Joi.boolean(),
+    stancic: Joi.boolean(),
+    lift: Joi.boolean(),
+    terasa: Joi.boolean(),
+    novogradnja: Joi.boolean(),
+    starogradnja: Joi.boolean(),
+    zemljiste: Joi.boolean(),
+    poslovniProstor: Joi.boolean(),
   }).required(),
   deleteImages: Joi.array(),
 });

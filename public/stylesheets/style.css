@@ -143,3 +143,81 @@
   letter-spacing: 1px;
   font-weight: 200;
 }
+
+.slider-container {
+  width: 50%;
+  margin: 50px auto;
+}
+
+.slider {
+  width: 100%;
+}
+
+/*Dropdown Dugme*/
+
+/* Style the dropdown button */
+.dropbtn {
+  background-color: whitesmoke;
+  color: #160e3f;
+}
+
+.dropbtn:hover {
+  background-color: #160e3f;
+  color: whitesmoke;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+/* .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #160e3f;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  color: whitesmoke;
+} */
+
+/* Show the dropdown menu */
+/* .show {
+  display: block;
+} */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 60px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  border-radius: 10px;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+  font-size: small;
+  color: #160e3f;
+
+  border-radius: 10px;
+}
+
+.dropdown-content a:hover {
+  background-color: #160e3f;
+  color: whitesmoke;
+
+  border-radius: 10px;
+}
+
+.show {
+  display: block;
+}

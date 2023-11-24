@@ -49,6 +49,17 @@ const StanSchema = new Schema(
     agentEmail: String,
 
     videoLink: String,
+
+    daProvizija: { type: Boolean, default: false },
+    neProvizija: { type: Boolean, default: false },
+    kuca: { type: Boolean, default: false },
+    stancic: { type: Boolean, default: false },
+    lift: { type: Boolean, default: false },
+    terasa: { type: Boolean, default: false },
+    novogradnja: { type: Boolean, default: false },
+    starogradnja: { type: Boolean, default: false },
+    zemljiste: { type: Boolean, default: false },
+    poslovniProstor: { type: Boolean, default: false },
   },
   opts
 );
