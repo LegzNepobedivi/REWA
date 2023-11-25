@@ -29,6 +29,7 @@ module.exports.stanSchema = Joi.object({
   stan: Joi.object({
     title: Joi.string().required().escapeHTML(),
     sale: Joi.string().required().escapeHTML(),
+    type: Joi.string().required().escapeHTML(),
     location: Joi.string().required().escapeHTML(),
     price: Joi.number().required().min(0),
     structure: Joi.number().min(0),
@@ -45,14 +46,11 @@ module.exports.stanSchema = Joi.object({
     videoLink: Joi.string(),
     daProvizija: Joi.boolean(),
     neProvizija: Joi.boolean(),
-    kuca: Joi.boolean(),
-    stancic: Joi.boolean(),
+
     lift: Joi.boolean(),
     terasa: Joi.boolean(),
     novogradnja: Joi.boolean(),
     starogradnja: Joi.boolean(),
-    zemljiste: Joi.boolean(),
-    poslovniProstor: Joi.boolean(),
   }).required(),
   deleteImages: Joi.array(),
 });
@@ -63,5 +61,15 @@ module.exports.agentSchema = Joi.object({
     mobile: Joi.string().required(),
     mail: Joi.string().required().escapeHTML(),
     license: Joi.string().required().escapeHTML(),
+  }).required(),
+});
+
+module.exports.pretragaSchema = Joi.object({
+  pretraga: Joi.object({
+    kupiZakupi: Joi.string().escapeHTML(),
+    tipNek: Joi.string().escapeHTML(),
+    location: Joi.string().escapeHTML(),
+    roomNum: Joi.string().escapeHTML(),
+    priceRange: Joi.number(),
   }).required(),
 });

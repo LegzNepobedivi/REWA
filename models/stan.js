@@ -28,6 +28,7 @@ const StanSchema = new Schema(
       coordinates: { type: [Number], required: true },
     },
     sale: String,
+    type: String,
     location: String,
     price: Number,
     structure: Number,
@@ -37,8 +38,6 @@ const StanSchema = new Schema(
     etaza: String,
     description: String,
 
-    language: { type: String, default: "Srpski" },
-    types: [String],
     author: {
       type: Schema.Types.ObjectId,
       ref: "User",
@@ -52,14 +51,10 @@ const StanSchema = new Schema(
 
     daProvizija: { type: Boolean, default: false },
     neProvizija: { type: Boolean, default: false },
-    kuca: { type: Boolean, default: false },
-    stancic: { type: Boolean, default: false },
     lift: { type: Boolean, default: false },
     terasa: { type: Boolean, default: false },
     novogradnja: { type: Boolean, default: false },
     starogradnja: { type: Boolean, default: false },
-    zemljiste: { type: Boolean, default: false },
-    poslovniProstor: { type: Boolean, default: false },
   },
   opts
 );

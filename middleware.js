@@ -1,5 +1,6 @@
-const { stanSchema, agentSchema } = require("./schemas.js");
+const { stanSchema, agentSchema, pretragaSchema } = require("./schemas.js");
 
+const Pretraga = require("./models/pretraga");
 const Stan = require("./models/stan");
 const Agent = require("./models/agent");
 
@@ -53,8 +54,18 @@ module.exports.isAgentAuthor = async (req, res, next) => {
 };
 
 module.exports.validateAgent = (req, res, next) => {
-  console.log(req.body);
   const { error } = agentSchema.validate(req.body);
+  if (error) {
+    const msg = error.details.map((el) => el.message).join(",");
+    throw new ExpressError(msg, 400);
+  } else {
+    next();
+  }
+};
+
+module.exports.validatePretraga = (req, res, next) => {
+  console.log(req.body);
+  const { error } = pretragaSchema.validate(req.body);
   if (error) {
     const msg = error.details.map((el) => el.message).join(",");
     throw new ExpressError(msg, 400);

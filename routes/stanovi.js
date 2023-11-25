@@ -9,7 +9,12 @@ const stanovi = require("../controllers/stanovi");
 const catchAsync = require("../utils/catchAsync");
 const ExpressError = require("../utils/ExpressError");
 
-const { isLoggedIn, isAuthor, validateStan } = require("../middleware");
+const {
+  isLoggedIn,
+  isAuthor,
+  validateStan,
+  validatePretraga,
+} = require("../middleware");
 
 const { stanSchema } = require("../schemas.js");
 const Stan = require("../models/stan");
@@ -26,6 +31,11 @@ router
     validateStan,
     catchAsync(stanovi.createStan)
   );
+
+router
+  .route("/pretraga")
+  .get(catchAsync(stanovi.searchPage))
+  .post(validatePretraga, upload.array("image"), catchAsync(stanovi.newSearch));
 
 router
   .route("/mapa")

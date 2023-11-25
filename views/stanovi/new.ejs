@@ -25,6 +25,23 @@
       </div>
 
       <div class="mb-3">
+        <label class="form-label" for="type">Tip nekretnine</label>
+        <select
+          class="form-select"
+          id="type"
+          name="stan[type]"
+          aria-label="Default select example"
+          required
+        >
+          <option value="Stan" selected>Stan</option>
+          <option value="Kuca">Kuća</option>
+          <option value="PoslovniProstor">Poslovni Prostor</option>
+          <option value="Zemljiste">Zemljiste</option>
+        </select>
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
         <label class="form-label" for="title">Naziv/Naslov</label>
         <input
           class="form-control"
@@ -208,7 +225,7 @@
       </div>
 
       <div class="mb-3">
-        <label class="form-label" for="daProvizija">Sta sve ima</label>
+        <label class="form-label" for="sta">Sta sve ima</label>
 
         <div class="form-check">
           <input
@@ -218,7 +235,7 @@
             id="daProvizija"
             name="stan[daProvizija]"
           />
-          <label class="form-check-label" for="provizija">
+          <label class="form-check-label" for="daProvizija">
             Sa provizijom
           </label>
         </div>
@@ -228,33 +245,14 @@
             class="form-check-input"
             type="checkbox"
             value="true"
-            id="bezProvizija"
-            name="stan[bezProvizija]"
+            id="neProvizija"
+            name="stan[neProvizija]"
           />
-          <label class="form-check-label" for="bezProvizija">
+          <label class="form-check-label" for="neProvizija">
             Bez provizije
           </label>
         </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value="true"
-            id="kuca"
-            name="stan[kuca]"
-          />
-          <label class="form-check-label" for="kuca"> Kuca </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value="true"
-            id="stancic"
-            name="stan[stancic]"
-          />
-          <label class="form-check-label" for="stancic"> Stan </label>
-        </div>
+
         <div class="form-check">
           <input
             class="form-check-input"
@@ -297,28 +295,6 @@
           />
           <label class="form-check-label" for="starogradnja">
             Stara gradnja
-          </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value="true"
-            id="zemljiste"
-            name="stan[zemljiste]"
-          />
-          <label class="form-check-label" for="zemljiste"> Zemljiste </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value="true"
-            id="poslovniProstor"
-            name="stan[poslovniProstor]"
-          />
-          <label class="form-check-label" for="poslovniProstor">
-            Poslovni prostor
           </label>
         </div>
       </div>

@@ -3,8 +3,8 @@ const map = new mapboxgl.Map({
   container: "map",
   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
   style: "mapbox://styles/mapbox/dark-v11",
-  center: [-103.5917, 40.6699],
-  zoom: 3,
+  center: [20.6699, 44.7399],
+  zoom: 5,
 });
 
 map.on("load", () => {
@@ -76,16 +76,14 @@ map.on("load", () => {
       layers: ["clusters"],
     });
     const clusterId = features[0].properties.cluster_id;
-    map
-      .getSource("stanovi")
-      .getClusterExpansionZoom(clusterId, (err, zoom) => {
-        if (err) return;
+    map.getSource("stanovi").getClusterExpansionZoom(clusterId, (err, zoom) => {
+      if (err) return;
 
-        map.easeTo({
-          center: features[0].geometry.coordinates,
-          zoom: zoom,
-        });
+      map.easeTo({
+        center: features[0].geometry.coordinates,
+        zoom: zoom,
       });
+    });
   });
 
   // When a click event occurs on a feature in

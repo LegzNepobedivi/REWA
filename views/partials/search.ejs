@@ -22,48 +22,58 @@
   <div class="container">
     <div class="row g-5">
       <!--Forma-->
-      <form class="needs-validation" novalidate="">
+      <form
+        action="/stanovi/pretraga"
+        method="POST"
+        class="validated-form"
+        novalidate
+      >
         <div class="row g-3">
           <div class="col-12 col-md-6 col-xl-3">
-            <select class="form-select" id="nrbitno" required="">
-              <option value="" selected>Kupujem/Zakupljujem...</option>
-              <option>Kupujem</option>
-              <option>Zakupljujem</option>
+            <select
+              class="form-select"
+              id="kupiZakupi"
+              name="pretraga[kupiZakupi]"
+              aria-label=""
+            >
+              <option value="default" selected>Kupujem/Zakupljujem...</option>
+              <option value="Prodaja">Kupujem</option>
+              <option value="Izdavanje">Zakupljujem</option>
             </select>
           </div>
 
           <div class="col-12 col-md-6 col-xl-3">
-            <select class="form-select" id="state" required="">
-              <option value="">Tip nekretnine...</option>
-              <option>Stan</option>
-              <option>Kuća</option>
-              <option>Zemljište</option>
-              <option value="">Poslovni prostor</option>
+            <select class="form-select" id="tipNek" name="pretraga[tipNek]">
+              <option value="default" selected>Tip nekretnine...</option>
+              <option value="Stan">Stan</option>
+              <option value="Kuca">Kuća</option>
+              <option value="Zemljiste">Zemljište</option>
+              <option value="PoslovniProstor">Poslovni prostor</option>
             </select>
           </div>
 
           <div class="col-12 col-md-6 col-xl-3">
-            <select class="form-select" id="country" required="">
-              <option value="" selected>Lokacija...</option>
+            <select class="form-select" id="location" name="pretraga[location]">
+              <option value="default" selected>Lokacija...</option>
               <% for( let stan of stanovi) { %>
-              <option value=""><%= stan.location %></option>
+              <option value="<%= stan.location %>"><%= stan.location %></option>
               <% } %>
             </select>
           </div>
 
           <div class="col-12 col-md-6 col-xl-3">
-            <select class="form-select" id="provizija" required="">
-              <option value="" selected>Broj soba...</option>
-              <option value="">0.5</option>
-              <option value="">1.0</option>
-              <option value="">1.5</option>
-              <option value="">2.0</option>
-              <option value="">2.5</option>
-              <option value="">3.0</option>
-              <option value="">3.5</option>
-              <option value="">4.0</option>
-              <option value="">4.5</option>
-              <option value="">5.0</option>
+            <select class="form-select" id="roomNum" name="pretraga[roomNum]">
+              <option value="default" selected>Broj soba...</option>
+              <option value="0.5">0.5</option>
+              <option value="1.0">1.0</option>
+              <option value="1.5">1.5</option>
+              <option value="2.0">2.0</option>
+              <option value="2.5">2.5</option>
+              <option value="3.0">3.0</option>
+              <option value="3.5">3.5</option>
+              <option value="4.0">4.0</option>
+              <option value="4.5">4.5</option>
+              <option value="5.0">5.0</option>
             </select>
           </div>
         </div>
@@ -79,10 +89,11 @@
             type="range"
             min="10000"
             max="1000000"
-            value="20000"
+            value="1000000"
             step="2000"
             class="slider"
-            id="myRange"
+            id="priceRange"
+            name="pretraga[priceRange]"
           />
         </div>
 
@@ -124,7 +135,7 @@
 <!--Za Slider i Dropdown-->
 <script>
   //Slider
-  const slider = document.getElementById("myRange");
+  const slider = document.getElementById("priceRange");
   const output = document.getElementById("sliderValue");
 
   // Display the default slider value
