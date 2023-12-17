@@ -81,51 +81,77 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 app.use(flash());
 
-// const scriptSrcUrls = [
-//   "https://stackpath.bootstrapcdn.com/",
-//   "https://api.tiles.mapbox.com/",
-//   "https://api.mapbox.com/",
-//   "https://kit.fontawesome.com/",
-//   "https://cdnjs.cloudflare.com/",
-//   "https://cdn.jsdelivr.net",
-// ];
-// //This is the array that needs added to
-// const styleSrcUrls = [
-//   "https://kit-free.fontawesome.com/",
-//   "https://api.mapbox.com/",
-//   "https://api.tiles.mapbox.com/",
-//   "https://fonts.googleapis.com/",
-//   "https://use.fontawesome.com/",
-//   "https://cdn.jsdelivr.net",
-// ];
-// const connectSrcUrls = [
-//   "https://api.mapbox.com/",
-//   "https://a.tiles.mapbox.com/",
-//   "https://b.tiles.mapbox.com/",
-//   "https://events.mapbox.com/",
-// ];
-// const fontSrcUrls = [];
-// app.use(
-//   helmet.contentSecurityPolicy({
-//     directives: {
-//       defaultSrc: [],
-//       connectSrc: ["'self'", ...connectSrcUrls],
-//       scriptSrc: ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
-//       styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
-//       workerSrc: ["'self'", "blob:"],
-//       objectSrc: [],
-//       imgSrc: [
-//         "'self'",
-//         "blob:",
-//         "data:",
-//         `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/`, //SHOULD MATCH YOUR CLOUDINARY ACCOUNT!
-//         "https://images.unsplash.com/",
-//       ],
-//       fontSrc: ["'self'", ...fontSrcUrls],
-//     },
-//   })
-// );
-app.use(helmet({ contentSecurityPolicy: false }));
+// CONTENT SECURITY CONFIG
+
+const scriptSrcUrls = [
+  "https://stackpath.bootstrapcdn.com/",
+  "https://api.tiles.mapbox.com/",
+  "https://api.mapbox.com/",
+  "https://kit.fontawesome.com/",
+  "https://cdnjs.cloudflare.com/",
+  "https://cdn.jsdelivr.net/",
+  "https://code.jquery.com/",
+  "https://www.w3schools.com",
+  "https://maxcdn.bootstrapcdn.com/",
+  "https://mdbootstrap.com/",
+];
+//This is the array that needs added to
+const styleSrcUrls = [
+  "https://stackpath.bootstrapcdn.com/",
+  "https://kit-free.fontawesome.com/",
+  "https://api.mapbox.com/",
+  "https://api.tiles.mapbox.com/",
+  "https://fonts.googleapis.com/",
+  "https://use.fontawesome.com/",
+  "https://cdn.jsdelivr.net/",
+  "https://cdnjs.cloudflare.com/",
+  "https://maxcdn.bootstrapcdn.com/bootstrap",
+  "https://www.w3schools.com",
+  "https://maxcdn.bootstrapcdn.com/",
+  "https://mdbootstrap.com/",
+];
+const connectSrcUrls = [
+  "https://api.mapbox.com/",
+  "https://a.tiles.mapbox.com/",
+  "https://b.tiles.mapbox.com/",
+  "https://events.mapbox.com/",
+];
+const fontSrcUrls = [
+  "https://stackpath.bootstrapcdn.com/",
+  "https://kit-free.fontawesome.com/",
+  "https://fonts.googleapis.com/",
+  "https://use.fontawesome.com/",
+  "https://cdn.jsdelivr.net/",
+  "https://cdnjs.cloudflare.com/",
+  "https://maxcdn.bootstrapcdn.com/bootstrap",
+  "https://www.w3schools.com",
+  "https://maxcdn.bootstrapcdn.com/",
+  "https://fonts.gstatic.com",
+  "https://mdbootstrap.com/",
+];
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: [],
+      connectSrc: ["'self'", ...connectSrcUrls],
+      scriptSrc: ["'unsafe-inline'", "'self'", ...scriptSrcUrls],
+      styleSrc: ["'self'", "'unsafe-inline'", ...styleSrcUrls],
+      workerSrc: ["'self'", "blob:"],
+      objectSrc: [],
+      imgSrc: [
+        "'self'",
+        "blob:",
+        "data:",
+        `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/`, //SHOULD MATCH YOUR CLOUDINARY ACCOUNT!
+        "https://images.unsplash.com/",
+        "https://mdbootstrap.com/",
+      ],
+      fontSrc: ["'self'", ...fontSrcUrls],
+    },
+  })
+);
+
+//app.use(helmet({ contentSecurityPolicy: true }));
 
 app.use(passport.initialize());
 app.use(passport.session());

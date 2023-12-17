@@ -31,7 +31,7 @@ const StanSchema = new Schema(
     type: String,
     location: String,
     price: Number,
-    structure: Number,
+    structure: String,
     areaSize: String,
     toilets: Number,
     level: Number,

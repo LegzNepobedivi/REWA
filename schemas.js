@@ -32,7 +32,7 @@ module.exports.stanSchema = Joi.object({
     type: Joi.string().required().escapeHTML(),
     location: Joi.string().required().escapeHTML(),
     price: Joi.number().required().min(0),
-    structure: Joi.number().min(0),
+    structure: Joi.string().required().escapeHTML(),
     areaSize: Joi.string().required().escapeHTML(),
     toilets: Joi.number().min(0),
     level: Joi.number(),
