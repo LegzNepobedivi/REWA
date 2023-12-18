@@ -1,4 +1,4 @@
-Web app made using:
+Real estate web app made using:
 - HTML5/CSS3
 - JavaScript(ES6)
 - Node.js
