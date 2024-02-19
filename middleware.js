@@ -64,7 +64,7 @@ module.exports.validateAgent = (req, res, next) => {
 };
 
 module.exports.validatePretraga = (req, res, next) => {
-  console.log(req.body);
+  //console.log(req.body);
   const { error } = pretragaSchema.validate(req.body);
   if (error) {
     const msg = error.details.map((el) => el.message).join(",");

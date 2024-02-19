@@ -221,3 +221,31 @@
 .show {
   display: block;
 }
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  font-style: italic;
+  color: goldenrod;
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+  text-align: center;
+  font: size 2.8rem;
+  opacity: 0; /* Start with 0 opacity */
+  animation: fadeIn 1.5s ease-in-out forwards; /* Animation for fading in */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

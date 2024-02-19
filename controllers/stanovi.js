@@ -100,24 +100,26 @@ module.exports.index = async (req, res) => {
   let perPage = 12;
   let page = req.query.page || 1;
 
-  const stanovi = await Stan.aggregate([{ $sort: { createdAt: -1 } }])
-    .skip(perPage * page - perPage)
-    .limit(perPage)
-    .exec();
-  const count = await Stan.count();
+  const stanovi = await Stan.aggregate([{ $sort: { createdAt: -1 } }]);
+  const sveLokacije = stanovi;
+    //.skip(perPage * page - perPage)//
+    //.limit(perPage)
+    //.exec();
+    //const count = await Stan.count();
 
   res.render("stanovi/index", {
     stanovi,
-    current: page,
-    pages: Math.ceil(count / perPage),
+    sveLokacije,
+    //current: page,
+    //pages: Math.ceil(count / perPage),
   });
 };
 
 module.exports.newSearch = async (req, res) => {
-  console.log("pretraga");
+  //console.log("pretraga");
   const pretraga = new Pretraga(req.body.pretraga);
   await pretraga.save();
-  console.log(pretraga);
+  //console.log(pretraga);
   req.flash("success", "Uspesna pretraga");
   res.redirect("/stanovi/pretraga");
 };
@@ -152,10 +154,10 @@ module.exports.searchPage = async (req, res) => {
     stanovi = await Stan.aggregate([
       { $match: { price: { $lte: priceRange } } },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
   //yxxx 2
@@ -172,10 +174,10 @@ module.exports.searchPage = async (req, res) => {
         },
       },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
   //xyxx 3
@@ -192,10 +194,10 @@ module.exports.searchPage = async (req, res) => {
         },
       },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
   //xxyx 4
@@ -212,10 +214,10 @@ module.exports.searchPage = async (req, res) => {
         },
       },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
   //xxxy 5
@@ -233,10 +235,10 @@ module.exports.searchPage = async (req, res) => {
         },
       },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
   //yyxx 6
@@ -258,10 +260,10 @@ module.exports.searchPage = async (req, res) => {
         },
       },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
   //yxyx 7
@@ -283,10 +285,10 @@ module.exports.searchPage = async (req, res) => {
         },
       },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
   //yxxy 8
@@ -308,10 +310,10 @@ module.exports.searchPage = async (req, res) => {
         },
       },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
   //xyyx 9
@@ -333,10 +335,10 @@ module.exports.searchPage = async (req, res) => {
         },
       },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
   //xyxy 10
@@ -358,10 +360,10 @@ module.exports.searchPage = async (req, res) => {
         },
       },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
   //xxyy 11
@@ -383,10 +385,10 @@ module.exports.searchPage = async (req, res) => {
         },
       },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
   //xyyy 12
@@ -409,10 +411,10 @@ module.exports.searchPage = async (req, res) => {
         },
       },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
   //yxyy 13
@@ -435,10 +437,10 @@ module.exports.searchPage = async (req, res) => {
         },
       },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
   //yyxy 14
@@ -461,10 +463,10 @@ module.exports.searchPage = async (req, res) => {
         },
       },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
   //yyyx 15
@@ -487,10 +489,10 @@ module.exports.searchPage = async (req, res) => {
         },
       },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
   //yyyy 16
@@ -514,20 +516,23 @@ module.exports.searchPage = async (req, res) => {
         },
       },
       { $sort: { createdAt: -1 } },
-    ])
-      .skip(perPage * page - perPage)
-      .limit(perPage)
-      .exec();
+    ]);
+      //.skip(perPage * page - perPage)
+      //.limit(perPage)
+      //.exec();
   }
 
-  console.log(stanovi);
+  //console.log(stanovi);
 
   await Pretraga.deleteMany({});
 
+  const sveLokacije = await Stan.aggregate([{ $sort: { createdAt: -1 } }]);
+
   res.render("stanovi/index", {
     stanovi,
-    current: page,
-    pages: Math.ceil(count / perPage),
+    sveLokacije,
+    //current: page,
+    //pages: Math.ceil(count / perPage),
   });
 
   //   .skip(perPage * page - perPage)

@@ -94,6 +94,8 @@ const scriptSrcUrls = [
   "https://www.w3schools.com",
   "https://maxcdn.bootstrapcdn.com/",
   "https://mdbootstrap.com/",
+  "https://www.youtube.com/",
+
 ];
 //This is the array that needs added to
 const styleSrcUrls = [
@@ -115,6 +117,7 @@ const connectSrcUrls = [
   "https://a.tiles.mapbox.com/",
   "https://b.tiles.mapbox.com/",
   "https://events.mapbox.com/",
+  "https://www.youtube.com/",
 ];
 const fontSrcUrls = [
   "https://stackpath.bootstrapcdn.com/",

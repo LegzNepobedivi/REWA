@@ -52,11 +52,19 @@
             </select>
           </div>
 
+          <% skup = new Set() %>
           <div class="col-12 col-md-6 col-xl-3">
             <select class="form-select" id="location" name="pretraga[location]">
               <option value="default" selected>Lokacija...</option>
-              <% for( let stan of stanovi) { %>
-              <option value="<%= stan.location %>"><%= stan.location %></option>
+              <% for( let stan of sveLokacije) { %>  
+                <% skup.add(stan.location); %>
+              <% } %>
+
+              <% let nizSkupa = Array.from(skup); %>
+              <% nizSkupa.sort(); %>
+
+              <% for(const entry of nizSkupa) {%>
+                <option value="<%= entry %>"><%= entry %></option>
               <% } %>
             </select>
           </div>
@@ -108,7 +116,7 @@
 
   <hr class="my-4" />
 
-  <div class="container text-center mb-3">
+  <!--<div class="container text-center mb-3">
     <div class="row justify-content-end">
       <div class="col-6 col-md-4 col-lg-4 col-xl-3 col-xxl-2">
         <button type="button" class="btn btn-outline-primary dugme">
@@ -129,7 +137,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
 </div>
 
 <!--Za Slider i Dropdown-->
