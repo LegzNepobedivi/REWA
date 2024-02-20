@@ -61,6 +61,10 @@ module.exports.agentSchema = Joi.object({
     mobile: Joi.string().required(),
     mail: Joi.string().required().escapeHTML(),
     license: Joi.string().required().escapeHTML(),
+    description: Joi.string().required().escapeHTML(),
+    position: Joi.string().required().escapeHTML(),
+    prikazatiMejl: Joi.boolean(),
+    prikazatiTelefon: Joi.boolean(),
   }).required(),
 });
 

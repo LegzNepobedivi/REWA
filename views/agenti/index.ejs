@@ -3,11 +3,13 @@
 <link rel="stylesheet" href="/stylesheets/style.css" type="text/css" />
 
 <div class="container">
+
   <% if(currentUser) {%>
   <div class="mt-4">
-    <a href="/agenti/new" class="btn btn-outline-primary">Dodaj agenta</a>
+    <a href="/agenti/new" class="btn btn-outline-primary">Dodaj zaposlenog</a>
   </div>
   <% }%>
+
   <div class="col-md-10 col-lg-10 col-xl-10 mx-auto mt-3">
     <h6
       style="color: #160e3f"
@@ -15,78 +17,67 @@
     >
       Naš Tim
     </h6>
-
     <hr/>
+    
+
+    <% for (let agent of agenti) { %>
     <div class="text-center ivanFont ivanPlava">
-      <div>    
       <img
             src="/img/charIcon1.svg"
             alt=""
             width="80px"
             height="80px"
             style="color: #160e3f"
-          />
-          <h1 >Aleksa Karan</h1>
-          <h3 class="fs-4">Direktor</h3>
+      />
+      <h1><%= agent.name %></h1>
+      <h3 class="fs-4"><%= agent.position %></h3>
+      <p class="fs-6 ivanFont"><%= agent.description %>
+        <% if(agent.prikazatiMejl) {%> 
+          Kontakt mail: <a class="ivanPlava" href="<%= agent.mail %>"><%= agent.mail %></a>
+        <% } %>
+      </p>
+
+      <% if(agent.prikazatiTelefon){ %>
+      <div class="btn-group">
+        <a
+          href="tel:<%= agent.mobile %>"
+          class="btn btn-outline-light dugme"
+          type="button"
+        >
+          <i class="bi bi-telephone-fill"></i>
+        </a>
+        <a
+          class="btn btn-outline-light dugmeDrugo text-uppercase"
+          href="tel:<%= agent.mobile %>"
+          type="button"
+        >
+          Pozovi
+        </a>
       </div>
-      <p class="fs-6 ivanFont">bsjakdjaskdaksbdkjsa Lorem ipsum dolor sit amet
-         consectetur adipisicing elit. Unde aperiam quis nisi dignissimos error
-          modi laudantium eligendi fugiat dolorem quas natus fuga, inventore ducimus ipsam magnam officiis placeat consequuntur earum.</p>
+      <% } %>
+
+      <% if(currentUser && agent.author.equals(currentUser._id)){ %>
+        <form
+          class="d-inline"
+          action="/agenti/<%= agent._id %>?_method=DELETE"
+          method="POST"
+        >
+          <button class="btn dugmeCrveno">Izbrisi</button>
+        </form>
+      <% } %>
+
     </div>
-    
+    <hr />
+    <% } %>
 
-    
-  <hr />
-
-  <div class="row mb-3">
-    <% for (let agent of agenti) {%>
-
-    <div class="col-lg-6">
-      <div class="p-1">
-        <div class="p-4 bg-body border rounded-3 row">
-          <div class="col-3">
-            <img
-              src="/img/charIcon1.svg"
-              alt=""
-              width="80px"
-              height="80px"
-              style="color: #160e3f"
-            />
-          </div>
-          <div class="col-9">
-            <p class="fs-5 ivanFont ivanPlava">
-              Agent: <%= agent.name %> <%= agent.mobile %>
-            </p>
-            <div class="btn-group">
-              <a
-                href="tel:<%= agent.mobile %>"
-                class="btn btn-outline-light dugme"
-                type="button"
-              >
-                <i class="bi bi-telephone-fill"></i>
-              </a>
-              <a
-                class="btn btn-outline-light dugmeDrugo text-uppercase"
-                href="tel:<%= agent.mobile %>"
-                type="button"
-              >
-                Pozovi
-              </a>
-              <% if(currentUser && agent.author.equals(currentUser._id)){ %>
-              <form
-                class="d-inline"
-                action="/agenti/<%= agent._id %>?_method=DELETE"
-                method="POST"
-              >
-                <button class="btn dugmeCrveno">Izbrisi</button>
-              </form>
-              <% } %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <%} %>
   </div>
+
+  <div 
+    style="font-style: italic;" 
+    class="ivanFont ivanPlava text-uppercase text-center fs-1 font-italic">
+    Sa nama ste bezbedni!
+  </div>
+  
+  <hr /> 
 </div>
 <!--style="background-color: #160e3f"-->

@@ -1,5 +1,5 @@
 <% layout('layouts/boilerplate') %>
-<div class="row">
+<div class="mt-3 row">
   <h1 class="text-center">Novi Agent</h1>
   <div class="col-6 offset-3">
     <form action="/agenti" method="POST" novalidate class="validated-form">
@@ -10,6 +10,18 @@
           type="text"
           id="name"
           name="agent[name]"
+          required
+        />
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="position">Titula/Pozicija</label>
+        <input
+          class="form-control"
+          type="text"
+          id="position"
+          name="agent[position]"
           required
         />
         <div class="valid-feedback">Izgleda dobro</div>
@@ -46,12 +58,50 @@
           type="text"
           id="license"
           name="agent[license]"
+          placeholder="Uneti 0 ako nema licencu / nije agent"
           required
         />
         <div class="valid-feedback">Izgleda dobro</div>
       </div>
 
       <div class="mb-3">
+        <label class="form-label" for="description">Detaljniji opis</label>
+        <textarea
+          class="form-control"
+          type="text"
+          id="description"
+          name="agent[description]"
+          required
+        ></textarea>
+        <div class="valid-feedback">Izgleda dobro</div>
+      </div>
+
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value="true"
+          id="prikazatiTelefon"
+          name="agent[prikazatiTelefon]"
+        />
+        <label class="form-check-label" for="prikazatiTelefon">
+          Prikazati Telefon Javno
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          value="true"
+          id="prikazatiMejl"
+          name="agent[prikazatiMejl]"
+        />
+        <label class="form-check-label" for="prikazatiMejl">
+          Prikazati Mejl Javno
+        </label>
+      </div>
+
+      <div class="mt-3 mb-3">
         <button class="btn btn-success">Dodaj agenta</button>
       </div>
     </form>

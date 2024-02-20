@@ -9,6 +9,10 @@ const AgentSchema = new Schema(
     mobile: String,
     mail: String,
     license: String,
+    position: String,
+    description: String,
+    prikazatiMejl: { type: Boolean, default: false },
+    prikazatiTelefon: { type: Boolean, default: false },
     author: {
       type: Schema.Types.ObjectId,
       ref: "User",

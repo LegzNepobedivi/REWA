@@ -16,10 +16,11 @@ module.exports.renderNewForm = (req, res) => {
 };
 
 module.exports.createAgent = async (req, res, next) => {
-  console.log("Usao");
+  //console.log("Usao");
   const agent = new Agent(req.body.agent);
   agent.author = req.user._id;
   await agent.save();
+  //console.log(agent);
   req.flash("success", "Agent saved successfully");
   res.redirect(`/agenti`);
 };
